@@ -1,5 +1,5 @@
 # Semáforo 
-
+obs.: colocar um esquema visual da máquina de estados
 ## Esquema do projeto
  - Estados do Carro
    - Neutro

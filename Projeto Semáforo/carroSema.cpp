@@ -105,6 +105,7 @@ void maqEstadosCarro(){
       carroNoVerde();
       if(!usoLCD) lcdVerde();
       break;
+    /*ALÉM DO NEUTRO*/
     default:
       carroMilli = millis();
       lcd.clear();

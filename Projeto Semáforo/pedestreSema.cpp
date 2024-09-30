@@ -5,7 +5,6 @@
 unsigned long pedestreMilli;
 unsigned long buzMilli;
 
-
 /* variável para a mudança de estados */
 int estadoPedestre = 0;
 /* variável para os estados */
