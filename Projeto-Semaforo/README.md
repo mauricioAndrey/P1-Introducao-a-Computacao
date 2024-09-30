@@ -1,6 +1,6 @@
-# Semáforo 
+## Semáforos Sincronizados
 
-![Diagrama de Blocos](Projeto-Semaforo/assets/maquinaEstados_Semaforo.png)
+![Diagrama de Blocos](/Projeto-Semaforo/assets/maquinaEstados_Semaforo.png)
 
 ## Esquema do projeto
 
