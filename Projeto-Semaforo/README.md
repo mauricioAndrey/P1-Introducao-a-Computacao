@@ -1,12 +1,12 @@
 # Semáforo 
-![Diagrama de Blocos](/assets/maquinaEstados_Semaforo.pdf)
 
-![Diagrama de Blocos](/assets/maquinaEstados_Semaforo.png)
+![Diagrama de Blocos](Projeto-Semaforo/assets/maquinaEstados_Semaforo.png)
 
 ## Esquema do projeto
 
 <details>
 <summary>Estados</summary>
+   
    - Inicial
      - Quando: tempo < 0 ou tempo > 25
      - Acontece: 
@@ -37,10 +37,12 @@
         - lcd "Vez do Caro"
         - semaforo Carro verde
         - semaforo Pedestre vermelho
+       
 </details>
 
 <details>
 <summary>Tabela dos Estados</summary>
+   
   | Tempo | Estado Carro | Estado Pedestre | LCD |
   |:-----------:|:-----------:|:-----------:|:-----------:|
   |      `<0`      |    `-`    |    `-`    |    `-`    |
