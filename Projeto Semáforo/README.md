@@ -1,49 +1,46 @@
 # Semáforo 
-obs.: colocar um esquema visual da máquina de estados
-## Esquema do projeto
- - Estados do Carro
-   - Neutro
-     - tempo < 0 ou tempo > 25
-     - lcd limpa
-     - semaforo desliga
-     - muda para o amarelo depois do tempo = 0
-   - Amarelo
-     - tempo > 0 e tempo < 5
-     - lcd mostra um timer e que os carros tenham atenção
-     - semaforo amarelo liga (e os outros desligam)
-     - muda para o vermelho depois do tempo = 5
-   - Vermelho
-     - tempo > 5 e tempo < 15
-     - lcd mostra um timer e que é a vez dos pedestres
-     - semaforo vermelho liga (e os outros desligam)
-     - muda para o verde depois do tempo = 15
-   - Verde
-     - tempo > 15 e tempo < 25
-     - lcd mostra um timer e que é a vez dos carros
-     - semaforo verde liga (e os outros desligam)
-     - muda para o neutro depois do tempo = 25
- - Estados do Pedestre
-   - Neutro
-     - tempo < 0 ou tempo > 25
-     - lcd limpa
-     - semaforo desliga
-     - muda para o vermelho depois do tempo = 0 
-   - Verde
-     - tempo > 0 e tempo < 5
-     - lcd mostra um timer e que é a vez dos pedestres
-     - semaforo verde liga (e os outros desligam)
-     - muda para o amarelo depois do tempo = 12
-   - Amarelo
-     - tempo > 15 e tempo < 25
-     - lcd mostra um timer e que os pedestres tenham atenção
-     - semaforo amarelo liga (e os outros desligam)
-     - muda para o vermelho depois do tempo = 15
-   - Vermelho
-     - tempo > 5 e tempo < 15
-     - lcd mostra um timer e que é a vez dos carros
-     - semaforo vermelho liga (e os outros desligam)
-     - muda para o neutro depois do tempo = 25
+![Diagrama de Blocos](/assets/maquinaEstados_Semaforo.pdf)
 
+![Diagrama de Blocos](/assets/maquinaEstados_Semaforo.png)
+
+## Esquema do projeto
+
+<details>
+<summary>Estados</summary>
+   - Inicial
+     - Quando: tempo < 0 ou tempo > 25
+     - Acontece: 
+        - lcd limpa
+        - semaforo Carro desliga
+        - semaforo Pedestre desliga
+   - Próximo Pedestre
+     - Quando: 0 < tempo < 5
+     - Acontece: 
+        - lcd "Próx. Pedestre"
+        - semaforo Carro amarelo
+        - semaforo Pedestre vermelho
+   - Vez do Pedestre
+     - Quando: 5 < tempo < 12
+     - Acontece: 
+        - lcd "Vez do Pesdestre"
+        - semaforo Carro vermelho
+        - semaforo Pedestre verde
+   - Próximo Carro
+     - Quando: 12 < tempo < 15
+     - Acontece: 
+        - lcd "Próx. Carro"
+        - semaforo Carro vermelho
+        - semaforo Pedestre amarelo
+   - Vez do Carro
+     - Quando: 15 < tempo < 25
+     - Acontece: 
+        - lcd "Vez do Caro"
+        - semaforo Carro verde
+        - semaforo Pedestre vermelho
+</details>
+
+<details>
+<summary>Tabela dos Estados</summary>
   | Tempo | Estado Carro | Estado Pedestre | LCD |
   |:-----------:|:-----------:|:-----------:|:-----------:|
   |      `<0`      |    `-`    |    `-`    |    `-`    |
@@ -52,5 +49,6 @@ obs.: colocar um esquema visual da máquina de estados
   |    `12 - 14.9`    |    `Vermelho`    |    `Amarelo`    |    `Prox: Carro`    |
   |    `15 - 25`    |    `Verde`    |    `Vermelho`    |    `Vez do Carro`    |
   |    `-`    |    `-`    |    `-`    |    `-`    |
-  
+
+</details>
   
