@@ -5,6 +5,7 @@
 unsigned long pedestreMilli;
 unsigned long buzMilli;
 
+
 /* variável para a mudança de estados */
 int estadoPedestre = 0;
 /* variável para os estados */
@@ -54,7 +55,7 @@ void buzAmarelo(int tom){
 }
 
 /* as mudanças do semaforo do pedestre */
-void maqEstadosPedestre(){
+void maqEstadosPedestre(){ 
   /* máquina de estados para as mudanças das saídas */
   switch (estadoPedestre){
     case neutro:
